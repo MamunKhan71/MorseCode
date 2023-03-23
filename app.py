@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__, template_folder='E:/Mini Programming/MorseCodeWeb/templates', static_folder='E:/Mini '
-                                                                                                  'Programming'
-                                                                                                  '/MorseCodeWeb/static')
+app = Flask(__name__)
 
 
 def morseDec(letters):
