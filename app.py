@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
+
 def morseDec(letters):
     match letters:
         case "-...-":
@@ -102,7 +103,6 @@ def morseDec(letters):
             return "0"
 
 
-
 def morseEnc(letter):
     match letter:
         case "=":
@@ -199,7 +199,6 @@ def morseEnc(letter):
             return "----. "
         case "0":
             return "----- "
-
 
 
 def morseCodeGenerator(userChoice, userInput):
