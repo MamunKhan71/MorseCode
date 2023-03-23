@@ -1,12 +1,31 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__, template_folder='E:/Mini Programming/MorseCodeWeb/templates', static_folder='E:/Mini '
-                                                                                                  'Programming'
-                                                                                                  '/MorseCodeWeb/static')
+app = Flask(__name__)
+
 
 
 def morseDec(letters):
     match letters:
+        case "-...-":
+            return "="
+        case ".--.-.":
+            return "@"
+        case '.-..-.':
+            return '"'
+        case "-.--.-":
+            return ")"
+        case "-.--.":
+            return "("
+        case "-.-.--":
+            return "!"
+        case ".----.":
+            return "'"
+        case "..--..":
+            return "?"
+        case ".-.-.-":
+            return "."
+        case "--..--":
+            return ","
         case '':
             return ''
         case "/":
@@ -85,8 +104,29 @@ def morseDec(letters):
             return "0"
 
 
+
 def morseEnc(letter):
     match letter:
+        case "=":
+            return "-...- "
+        case "@":
+            return ".--.-. "
+        case '"':
+            return ".-..-. "
+        case ")":
+            return "-.--.- "
+        case "(":
+            return "-.--. "
+        case "!":
+            return "-.-.-- "
+        case "'":
+            return ".----. "
+        case "?":
+            return "..--.. "
+        case ".":
+            return ".-.-.- "
+        case ",":
+            return "--..-- "
         case " ":
             return "/"
         case "A":
@@ -163,6 +203,7 @@ def morseEnc(letter):
             return "----- "
 
 
+
 def morseCodeGenerator(userChoice, userInput):
     userData = userChoice
     userList = []
@@ -178,9 +219,7 @@ def morseCodeGenerator(userChoice, userInput):
         return newText
     else:
         userText = userInput
-        print(userText)
         userText_to_list = userText.split('/')
-        print(userText_to_list)
         for i, s in enumerate(userText_to_list):
             if " " in s:
                 finalSplit.extend(s.split(" "))
@@ -190,7 +229,6 @@ def morseCodeGenerator(userChoice, userInput):
                 finalSplit.append(s)
                 if i != len(userText_to_list) - 1:
                     finalSplit.append("/")
-            print(finalSplit)
         for letter in finalSplit:
             new_list_text = morseDec(letter)
             newUserList.append(new_list_text)
