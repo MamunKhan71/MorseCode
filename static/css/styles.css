@@ -41,6 +41,16 @@ textarea{
     font-size: 20px;
     text-align: center;
 }
+.btn1{
+    background-color: blue;
+    border: 1px;
+    border-radius: 4px;
+    color: white;
+    float: right;
+    width: 30px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
 .btn{
     background-color: blue;
     color: white;
@@ -66,4 +76,64 @@ footer{
 a{
     text-decoration: none;
     color: darkorange;
+}
+.btn-copy {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 5px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+}
+
+.btn-copy:hover {
+  color: #000;
+}
+
+.fa-copy:before {
+  content: "\f0c5";
+}
+    .input-group {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    .input-group textarea {
+        padding-right: 80%;
+    }
+    .input-group button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        height: calc(100% - 10px);
+    }
+.textarea-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.textarea-wrapper textarea {
+    margin-left: 20px;
+    width: 80%;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.textarea-wrapper button {
+    border-top: black;
+    background-color: white;
+    color: black;
+    margin-left: 20px;
+    border: 1px;
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
