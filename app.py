@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
+import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='E:/Mini Programming/MorseCodeWeb/templates', static_folder='E:/Mini '
+                                                                                                  'Programming'
+                                                                                                  '/MorseCodeWeb/static')
+year = datetime.datetime.now().year
 
 
 def morseDec(letters):
@@ -240,7 +244,7 @@ def home():
         text = request.form['input']
         methods = request.form['method']
         result = morseCodeGenerator(userChoice=methods, userInput=text)
-    return render_template('index.html', result=result)
+    return render_template('index.html', result=result, year=year)
 
 
 if __name__ == '__main__':
