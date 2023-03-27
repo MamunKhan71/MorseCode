@@ -28,7 +28,7 @@
                   <label for="method" style="padding-right: 20px">Morse Encrypt</label>
                   <input type="radio" name="method" value="2">
                   <label for="method">Morse Decrypt</label> <br><br>
-                  <button class="btn">Generate</button>
+                  <button class="btn" onclick="copyToClipboard()">Generate</button>
                </form>
             </td>
          </tr>
@@ -41,8 +41,8 @@
                   <div class="textarea-wrapper">
                      {% if result %}
                      <textarea id="result">{{ result }}</textarea>
+{#                     <button onclick="copyToClipboard()"><i class="fa fa-clipboard fa-xl" aria-hidden="true"></i></button>#}
                      {% endif %}
-                     <button onclick="copyToClipboard()"><i class="fa fa-clipboard fa-xl" aria-hidden="true"></i></button>
                   </div>
                </form>
             </td>
